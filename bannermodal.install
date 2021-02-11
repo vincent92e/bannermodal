@@ -1,0 +1,25 @@
+/**
+ * Implements hook_install().
+ */
+function bannermodal_install() {
+
+#   $title = 'Thank you for installing Modal Page';
+  $body = '<p>You can create your Modal at <a href="/admin/structure/modal/add">Structure » Modal » Add Modal</a></p>';
+  $body .= '<p>Have fun :)</p>';
+  $body .= '<p>If liked, give us a <a href="https://www.drupal.org/project/modal_page" target="blank">star</a></p>';
+  $amount = '10';
+  $pages = '/admin/*';
+  $button_text = 'Pay Now';
+
+  $modal = Modal::create([
+#     'title' => $title,
+    'body' => $body,
+    'amount' => $amount,
+    'pages' => $pages,
+    'button_text' => button_text,
+  ]);
+
+  $modal->save();
+
+  \Drupal::service('cache.render')->invalidateAll();
+}

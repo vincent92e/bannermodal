@@ -1,0 +1,7 @@
+bannermodal.banner_modal_form:
+  path: '/bannermodal/form/banner_modal'
+  defaults:
+    _form: '\Drupal\bannermodal\Form\BannerModalForm'
+    _title: 'BannerModalForm'
+  requirements:
+    _access: 'TRUE'

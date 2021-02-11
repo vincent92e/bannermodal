@@ -1,0 +1,12 @@
+bannermodal.banner_modal_type.*:
+  type: config_entity
+  label: 'Banner modal type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

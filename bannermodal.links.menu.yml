@@ -1,0 +1,17 @@
+
+# Banner modal menu items definition
+entity.banner_modal.collection:
+  title: 'Banner modal list'
+  route_name: entity.banner_modal.collection
+  description: 'List Banner modal entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Banner modal type menu items definition
+entity.banner_modal_type.collection:
+  title: 'Banner modal type'
+  route_name: entity.banner_modal_type.collection
+  description: 'List Banner modal type (bundles)'
+  parent: system.admin_structure
+  weight: 99

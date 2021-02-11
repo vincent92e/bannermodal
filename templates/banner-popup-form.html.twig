@@ -1,0 +1,30 @@
+/**
+* Available Variables:
+* - title: Title of banner.
+* - body: Text(Body) of banner.
+* - donation_amounts: amounts field to be displayed.
+* - button_text: Button text for modal.
+*
+* @ingroup templates
+* @see banner_preprocess_banner_form()
+*/
+#}
+<div class="modal2" tabindex="-1" role="dialog" style="outline: none">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ title|raw }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{ body|striptags }}
+        {{ donation_amounts }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">{{ button_text|raw }}</button>
+      </div>
+    </div>
+  </div>
+</div>

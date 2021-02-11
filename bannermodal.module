@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Contains bannermodal.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bannermodal_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bannermodal module.
+    case 'help.page.bannermodal':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Banner contents for a modal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bannermodal_theme() {
+  $theme = [];
+  $theme['banner_modal'] = [
+    'render element' => 'elements',
+    'file' => 'banner_modal.page.inc',
+    'template' => 'banner_modal',
+  ];
+  $theme['banner_modal_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'banner_modal.page.inc',
+  ];
+  $theme['banner_popup_form'] = [
+    'render element' => 'form',
+    'template' => 'banner-popup-form',
+    'path' => drupal_get_path('module', 'bannermodal') . '/templates',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function bannermodal_theme_suggestions_banner_modal(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#banner_modal'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'banner_modal__' . $sanitized_view_mode;
+  $suggestions[] = 'banner_modal__' . $entity->bundle();
+  $suggestions[] = 'banner_modal__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'banner_modal__' . $entity->id();
+  $suggestions[] = 'banner_modal__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_form().
+ */
+function bannermodal_preprocess_banner_popup_form(array &$variables) {
+  // Set preprocess variables
+  $variables['title'] = $variables['form']['title']['#value'];
+  $variables['body'] = $variables['form']['body']['#value'];
+  $variables['donation_amounts'] = $variables['form']['donation_amounts'];
+  $variables['button_text'] = $variables['form']['button_text']['#value'];
+}

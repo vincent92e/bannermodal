@@ -1,0 +1,5 @@
+name: 'BannerModal'
+type: module
+description: 'Banner contents for a modal'
+core: 8.x
+package: 'Custom'

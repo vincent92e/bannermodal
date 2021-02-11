@@ -1,0 +1,10 @@
+entity.banner_modal.add_form:
+  route_name: entity.banner_modal.add_page
+  title: 'Add Banner modal'
+  appears_on:
+    - entity.banner_modal.collection
+entity.banner_modal_type.add_form:
+  route_name: entity.banner_modal_type.add_form
+  title: 'Add Banner modal type'
+  appears_on:
+    - entity.banner_modal_type.collection

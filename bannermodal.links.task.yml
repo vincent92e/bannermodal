@@ -1,0 +1,22 @@
+# Banner modal routing definition
+
+entity.banner_modal.canonical:
+  route_name: entity.banner_modal.canonical
+  base_route: entity.banner_modal.canonical
+  title: 'View'
+
+entity.banner_modal.edit_form:
+  route_name: entity.banner_modal.edit_form
+  base_route: entity.banner_modal.canonical
+  title: 'Edit'
+
+entity.banner_modal.version_history:
+  route_name: entity.banner_modal.version_history
+  base_route: entity.banner_modal.canonical
+  title: 'Revisions'
+
+entity.banner_modal.delete_form:
+  route_name:  entity.banner_modal.delete_form
+  base_route:  entity.banner_modal.canonical
+  title: Delete
+  weight: 10

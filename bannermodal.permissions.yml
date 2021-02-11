@@ -1,0 +1,33 @@
+add banner modal entities:
+  title: 'Create new Banner modal entities'
+
+administer banner modal entities:
+  title: 'Administer Banner modal entities'
+  description: 'Allow to access the administration form to configure Banner modal entities.'
+  restrict access: true
+
+delete banner modal entities:
+  title: 'Delete Banner modal entities'
+
+edit banner modal entities:
+  title: 'Edit Banner modal entities'
+
+view published banner modal entities:
+  title: 'View published Banner modal entities'
+
+view unpublished banner modal entities:
+  title: 'View unpublished Banner modal entities'
+
+view all banner modal revisions:
+  title: 'View all Banner modal revisions'
+
+revert all banner modal revisions:
+  title: 'Revert all Banner modal revisions'
+  description: 'Role requires permission <em>view Banner modal revisions</em> and <em>edit rights</em> for banner modal entities in question or <em>administer banner modal entities</em>.'
+
+delete all banner modal revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Banner modal revisions</em> and <em>delete rights</em> for banner modal entities in question or <em>administer banner modal entities</em>.'
+
+permission_callbacks:
+  - \Drupal\bannermodal\BannerModalPermissions::generatePermissions

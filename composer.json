@@ -1,0 +1,13 @@
+{
+    "name": "bannermodal",
+    "type": "drupal-module",
+    "description": "Banner contents for a modal",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/bannermodal",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/bannermodal",
+        "source": "http://cgit.drupalcode.org/bannermodal",
+    },
+}
